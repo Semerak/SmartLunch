@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SmartLunch</title>
+
+    <environment include="Development">
+        <!--
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        -->
+        <link rel="stylesheet" href="~/css/main.css" />
+    </environment>
+    <environment exclude="Development">
+        <!--
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+            -->
+        <link rel="stylesheet" href="~/css/main.css"  />
+
+    </environment>
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+
+            <!-- Logo -->
+            <h1><a href="index.php" id="logo">Smart Lunch <em></em></a></h1>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    @{
+                        if (ViewData["Title"].ToString() == "Index")
+                        {
+
+
+                            <li class="current"><a asp-area=""  asp-action="Index">Головна</a></li>
+                        }
+                        else
+                        {
+                            <li><a asp-area="" asp-controller="Home"  asp-action="Index">Головна</a></li>
+                        }
+                    }
+                   
+                    @{
+                        /*
+                          <?php if (isset($_COOKIE['id'])) { ?>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Menu" >Меню</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Order" >Замовлення</a></li>
+                        <?php }; ?>
+                         */
+                    }
+                    @{
+                        if (ViewData["Title"].ToString() == "Contact")
+                        {
+
+
+                            <li class="current"><a asp-area="" asp-controller="Home" asp-action="Contact">Контакти</a></li>
+                        }
+                        else
+                        {
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Контакти</a></li>
+                        }
+                    }
+
+
+                </ul>
+            </nav>
+
+        </div>
+        <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">SmartLunch</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Index">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Instructors" asp-action="Index">Instructors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Index">Departments</a>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+       -->
+
+        <partial name="_CookieConsentPartial" />
+        <!--
+    <div class="container body-content">
+            -->
+        @RenderBody()
+        <hr />
+        <!-- Footer -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+
+                    <section class="6u 12u(narrower)">
+                        <h3>Напишіть нам</h3>
+                        <form>
+                            <div class="row 50%">
+                                <div class="6u 12u(mobilep)">
+                                    <input type="text" name="name" id="name" placeholder="Ім'я" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <input type="email" name="email" id="email" placeholder="Електронна пошта" />
+                                </div>
+                            </div>
+                            <div class="row 50%">
+                                <div class="12u">
+                                    <textarea name="message" id="message" placeholder="Повідомлення" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="row 50%">
+                                <div class="12u">
+                                    <ul class="actions">
+                                        <li><input type="submit" class="button alt" value="Надіслати" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Icons -->
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+            </ul>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>Design: Dan Semerak</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+        <environment include="Development">
+            <!--
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            -->
+            <script src="~/js/jquery.min.js"></script>
+            <script src="~/js/jquery.dropotron.min.js"></script>
+            <script src="~/js/skel.min.js"></script>
+            <script src="~/js/util.js"></script>
+            <script src="~/js/main.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <!-->
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+                -->
+            <script src="~/js/jquery.min.js"></script>
+            <script src="~/js/jquery.dropotron.min.js"></script>
+            <script src="~/js/skel.min.js"></script>
+            <script src="~/js/util.js"></script>
+            <script src="~/js/main.js"></script>
+        </environment>
+
+        @RenderSection("Scripts", required: false)
+</body>
+</html>

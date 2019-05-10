@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<!-- Banner -->
+<section id="banner">
+    <header>
+        @{
+        /*
+        <?php
+
+        require_once('start/startsession.php');
+        require_once('start/connectvars.php');
+
+
+        if (isset($_COOKIE['id'])) {
+
+
+        $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+
+        $password=$_COOKIE['password'];
+
+
+        $query = "SELECT money FROM client WHERE email = '".$_COOKIE['email']."' AND password = SHA('$password');";
+
+        $data = mysqli_query($dbc, $query);
+
+
+
+
+        $row = mysqli_fetch_array($data);
+        $money=$row ['money']/100;
+
+
+
+        echo "<h2>
+            ". $_COOKIE['last_name']." ".$_COOKIE['first_name']." пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ".number_format($money,2)." пїЅпїЅпїЅ <h2>
+                <a href='logout.php' class='button'>пїЅпїЅпїЅпїЅпїЅ</a>";
+                }
+                else{
+                echo "<a href='login.php' class='button'>пїЅпїЅпїЅпїЅпїЅпїЅ </a> <h2> пїЅпїЅпїЅ </h2> <a href='signup.php' class='button'> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ </a>";};
+
+                ?>
+        */
+        }
+
+        <a href='login.php' class='button'>Увійдіть </a>  <a href='signup.php' class='button'> Зареєструйтесь </a>
+
+    </header>
+</section>
+<!-- Gigantic Heading -->
+<section class="wrapper style2">
+    <div class="container">
+        <header class="major">
+            <h2>Smart Lunch</h2>
+            <p>Зробить ваш день зручнішим</p>
+        </header>
+    </div>
+</section>
+
+<!-- Highlights -->
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+            <section class="4u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa fa-clock-o"></i>
+                    <h3>Час</h3>
+                    <p>Завдяки системі Smart Lunch ви зможете використати свій час на перерві, який ви зазвичай тратили в черзі, для спілкування з друзями, або підготовки до уроку.</p>
+                </div>
+            </section>
+            <section class="4u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa-apple"></i>
+                    <h3>Збалансоване харчування</h3>
+                    <p>Використання Smart Lunch дозволяє вам отримати доступ до свіжого, збалансованого раціону, а також дає можливість самостійно обирати найкращий варіант блюда</p>
+                </div>
+            </section>
+            <section class="4u 12u(narrower)">
+                <div class="box highlight">
+                    <i class="icon major fa-globe"></i>
+                    <h3>Мобільність</h3>
+                    <p>Ви отримуєте мобідьний доступ до свого шкільного харчування з будь-якої точки світу.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+
+
+
