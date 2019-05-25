@@ -7,14 +7,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartLunch.Models
 {
-    public class Transactions
+    public class List
     {
+        [Key]
         public int ID { get; set; }
-        public int ClientsID { get; set; }
-        public DateTime T_time { get; set; }
-        public decimal Balance { get; set; }
-        public string Assignment { get; set; }
+        public int DishesID { get; set; }
+        [Key]
+        public int L_quantity { get; set; }
 
-        public Clients Clients { get; set; }
+        public Dishes Dishes { get; set; }
+        public ICollection<Orders> Orders { get; set; }
+
     }
 }
