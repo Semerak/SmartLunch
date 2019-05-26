@@ -7,7 +7,7 @@ using SmartLunch.Models;
 
 namespace SmartLunch.Data
 {
-    public class SmartLunchContext
+    public class SmartLunchContext:DbContext
     {
         public SmartLunchContext(DbContextOptions<SmartLunchContext> options) : base(options)
         {
