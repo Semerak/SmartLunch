@@ -9,10 +9,10 @@ namespace SmartLunch.Models
 {
     public class List
     {
-        [Key]
+        //[Key]
         public int ID { get; set; }
         public int DishesID { get; set; }
-        [Key]
+        //[Key]
         public int L_quantity { get; set; }
 
         public Dishes Dishes { get; set; }
